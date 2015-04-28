@@ -1,0 +1,3 @@
+Macro Version:2
+GEN_PLANAR_3R_D4C
+DUAL

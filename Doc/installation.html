@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <META NAME="Author" CONTENT="Hubert de Fraysseix">
+    <title>Compilation and Installation</title>
+    <link type="text/css" rel="stylesheet"  href="style.css">
+  </head>
+
+<body>
+
+
+<table ALIGN="center">
+<tr>
+<td><A HREF="index.html"> <IMG SRC="./icones/misspost.png" HSPACE=0 BORDER=1  ALIGN=LEFT ALT="logo"></A></td>
+
+<td align= "center">
+	  <FONT SIZE="+3"><B>P.I.G.A.L.E.</B></FONT>
+	  <BR>
+	  <FONT SIZE="+2"><BR><B>P</B>ublic <B>I</B>mplementation of a <B>G</B>raph <B>A</B>lgorithm
+	    <BR>
+	    <B>L</B>ibrary and <B>E</B>ditor </FONT>
+	  <BR><BR>
+          <FONT SIZE="-1">
+		<A HREF="http://cams.ehess.fr/hf/">
+		  H. de Fraysseix</A>&nbsp &nbsp &nbsp
+		<A HREF="http://cams.ehess.fr/pom/">
+		  P. Ossona de Mendez</A>	   
+	  </FONT>
+</td>
+<td>
+<!-- for sourceforge 
+
+<A href="http://sourceforge.net"> 
+<IMG src="http://sourceforge.net/sflogo.php?group_id=50880&type=5" width="210" height="62" border="0" alt="SourceForge Logo"></A>
+</td>
+for sourceforge -->
+
+</tr>
+</table>
+
+
+<hr>
+
+
+<h1 class="c1"><b>Compilation and Installation</b></h1>
+
+    <p>This package includes the source files of a stand alone library <b>tgraph</b>, 
+      the editor <b>pigale</b> and the  <b>client</b> program 
+       and the souces of the <b>freeglut </b>library<br>
+      The editor and the client use  the <b>Qt</b> toolkit and  
+      the <b>OpenGL</b> libraries for the 3-dimensional drawings.
+      
+      <br>
+	    
+    </p>
+    <ul>
+      <li><b>g++</b> compiler:  g++ (version > 3.xx), <b>Microsoft Compiler</b> or <b>Clang</b></li>
+      <li><b>Qt</b> version >= 4.6.0 (<b>OSX Mavericks</b> needs  version >= 5.2.0), 
+	<a href="http://qt-project.org">(Qt home page)</a></li>
+
+      <li> <b>freeglut</b> library (used to display text in  the 3<sup>d </sup>drawings),
+          <a href="http://freeglut.sourceforge.net/">(freeglut)</a></li>
+
+    </ul>
+
+
+<h2 class="c1"><b>Linux and Mac OSX</b></h2>
+<h3 class="c1"> <b>Automatic  configuration</b></h3>
+Pigale uses GNU <b><tt>configure</tt></b> for the compilation and installation configurations.
+<ul>
+      <li> Run the configure script: <tt><b>./configure [options]</b></tt>
+	<ul>
+	  <li>By default, the prefix for installation is /usr/local/pigaleXXX.</li>
+	  <li>If you don't have a write permission, you must provide  another directory where 
+	    you have a write permission: <br><tt><b>./configure --prefix=$PWD</b></tt>.</li>
+	  <li>Usually the location of the installation of Qt is defined by the environment variable <b>QT4DIR</b><br>
+	  but preferably use <tt><b>./configure --with-qt=xxx</b></tt>.</li>
+          <li>If you are using <tt><b>Ubuntu</b></tt> and want to use the already installed
+                <tt><b>Qt4 package</b></tt> use the following option<br>
+            <tt><b>./configure --enable-ubuntu</b></tt>.<br>
+            You must habe installed the <tt><b>libqt4-dev</b></tt> <tt><b>libqt4-opengl-dev</b></tt> packages;
+          </li>
+
+	  <li>For more options run: <tt><b>./configure --help</b></tt> <br>
+	  These options, in particular, let you define the prefix, the mode (debug) etc.</li>
+	</ul>
+      </li>
+      <li> Next run the following commands:
+        <ul>
+	<li><tt><b>make</b></tt>
+	<li><tt><b>make install</b></tt>
+            </ul>
+    </ul>
+    <p>
+    If the prefix points to the directory containing the sources of Pigale, you do not need
+     to run <tt><b>make install</b></tt> (<b>pigale</b> will be in <b>prefix/qt</b>).<br>
+    If automake complains, you may try to execute:<br>
+    <tt><b>aclocal && automake -ac && autoconf</b></tt><br>
+    before running <tt><b>./configure</b></tt>
+      </p>
+     
+    The following directories are created during the installation:
+    <ul>
+      <li> <b>$prefix/bin</b>   (programs) </li>
+      <li> <b>$prefix/lib</b>  (libraries) </li>
+      <li> <b>$prefix/translations</b>  (translations) </li>
+      <li> <b>$prefix/Doc</b>  (documentation) </li>
+      <li> <b>$prefix/tgf</b>  (graph files) </li>
+      <li> <b>$prefix/macro</b>  (macros) </li>
+    </ul>
+   
+<h3 class="c1"> <b>Manual configuration</b></h3>
+
+On most distributions  <tt><b>Qt</b></tt> is installed, 
+but some  <tt><b>Qt</b></tt> tools might have been renamed.
+<br>
+In such case, you may 
+    <ul>
+      <li>Edit the file  <tt><b>pigale.inc</b></tt>,</li>
+      <li>Edit the file  <tt><b>runqmake.sh</b></tt> to provide the right qmake command to use,</li>
+      <li> Run <tt><b>./runqmake.sh</b></tt> to create the Makefiles,</li>
+    </ul>
+
+
+<h3 class="c1"> <b>Mac OSX (tested On Mavericks and previous versions)</b></h3>
+<ul>
+<li>You have to pass the Qt installation directory to ./configure:<br>
+	<tt><b>./configure --prefix=$PWD --with-qt=/Users/xxx/Qt5.2.0/5.2.0/clang_64</b></tt>,
+<li>  open pigale.pro with <b>QtCreator</b>.</li> 
+</ul>
+Remarks:
+	<ul>
+	<li>We use the freeglut library distributed with <b>OSX</b>,</li>
+	<li> Xcode project files are created during the configuration.</li>
+	</ul>
+
+
+
+
+<h2 class="c1"> <b>Windows</b></h2>
+    <p> Pigale  has been compiled  with the following:
+    </p> 
+      <ul>
+      <li> <b>gcc</b> compiler in the MinGW environment<a href="http://www.mingw.org"> MinGW</a>,</li>
+      <li> <b>Microsoft compiler</b>,</li>
+      <li> <b> Qt-4.6.X</b> ,<b>Qt-4.8.X</b> and <b>Qt-5.2.0</b> toolkit. </li>
+      </ul>
+    To compile Pigale from the sources with command lines (MinGW):
+    <ul>
+      <li> edit    <b>wpigale.inc,</b> 
+        (to precise your <b>Qt</b> installation directory and pigale prefix), </li>
+    <li> <b>open a terminal</b> 
+     <ul>    
+    <li> run <tt><b>wset.bat</b></tt> to set some global variables,</li>
+    <li> run <tt><b>wqmake.bat</b></tt> to create the Makefiles,</li>
+    <li> run <tt><b>wmake.bat install</b></tt>.</li>
+        </ul></ul>
+     <b>or using QtCreator:</b>   
+     <ul>
+     <li> edit    <b>wpigale.inc,</b>   
+     <li>open pigale.pro with <b>QtCreator.</b></li> 
+     </ul>
+      <b>or using Microsoft Visual Studio:</b>   
+     <ul>
+     <li> edit    <b>wpigale.inc,</b>      
+     <li> edit    <b>wsetMSCV.bat,</b> 
+     <li> open a terminal</b> 
+     <ul>
+     <li>  run <tt><b>wsetMSCV.bat</b></tt> to set some global variables,</li>
+     <li> run <tt><b>wqmakeMSCV.bat</b></tt> to create the project files (you may have to run it twice),</li>
+     </ul>
+     <li>open pigale.sh with <b>Microsoft Visual Studio</b>.</li> 
+     </ul>
+     
+    The installation creates three excutables: pigale, client and usingtgraph.<br>
+    There is also the possibility to create pigale.cgi to be used with a web server.
+
+    <hr>
+    <table>
+      <tr><td><IMG SRC="./icones/mail.gif" ALT="mail logo"></td>
+	<td><address><a href="mailto:hbonnin@users.sourceforge.net">
+         Hubert de Fraysseix</a></address></td>
+	<td><address><a href="mailto:pom@users.sourceforge.net">
+         Patrice Ossona de Mendez</a></address></td>
+      </tr></table>
+    <hr><!-- hhmts start -->
+Last modified: Saturday Dec 28 14:37:00 CET 2013
+<!-- hhmts end -->
+</body>
+
+</html>
+
+

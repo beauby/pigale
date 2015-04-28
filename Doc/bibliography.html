@@ -1,0 +1,505 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="Author" content="Hubert de Fraysseix">
+  <title>PIGALE Library</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+<table align="center">
+  <tbody>
+    <tr>
+      <td><img src="./icones/misspost.jpg" hspace="0" border="1"
+ align="left" alt="logo"></td>
+      <td align="center"> <font size="+3"><b>P.I.G.A.L.E.</b></font> <br>
+      <font size="+2"><br>
+      <b>P</b>ublic <b>I</b>mplementation of a <b>G</b>raph <b>A</b>lgorithm
+      <br>
+      <b>L</b>ibrary and <b>E</b>ditor </font> <br>
+      <br>
+      <font size="-1"> <a
+ href="http://www.ehess.fr/centres/cams/person/hf/"> H. de Fraysseix</a>&nbsp;
+&nbsp; &nbsp; <a href="http://www.ehess.fr/centres/cams/person/pom/">
+P. Ossona de Mendez</a> </font>
+      </td>
+<!-- for sourceforge 
+      <td><a href="http://sourceforge.net"> <img
+ src="http://sourceforge.net/sflogo.php?group_id=50880&amp;type=5"
+ width="210" height="62" border="0" alt="SourceForge Logo"></a>
+      </td>
+ for sourceforge -->
+    </tr>
+  </tbody>
+</table>
+<hr>
+<!-- Biblio -->
+<h2>Pigale Bibliography</h2>
+<table>
+
+<tr valign="top">
+<td align="right">
+<a name="Tutteconv"></a>[1]
+</td>
+<td>
+W.T. Tutte.
+  Convex representations of graphs.
+  In <i>Proc. London Math. Society</i>, volume&nbsp;10, pages 304-320, 1960.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Tutteconv2"></a>[2]
+</td>
+<td>
+W.T. Tutte.
+  How to draw a graph.
+  In <i>Proc. London Math. Society</i>, volume&nbsp;13, pages 743-768, 1963.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_plandfs"></a>[3]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Rosenstiehl.
+  A depth-first search characterization of planarity.
+  <i>Annals of Discrete Mathematics</i>, 13:75-80, 1982.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_kurahfpr"></a>[4]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Rosenstiehl.
+  A discriminatory theorem of Kuratowski subgraphs.
+  In J.W.&nbsp;Kennedy&nbsp;M. Borowiecki and M.M.&nbsp;Sysl o, editors, <i>Graph
+  Theory, agów 1981</i>, volume 1018 of <i>Lecture Notes in
+  Mathematics</i>, pages 214-222. Springer-Verlag, 1983.
+  Conference dedicated to the memory of Kazimierz Kuratowski.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_plantrem"></a>[5]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Rosenstiehl.
+  Système de référence de Trémaux d'une représentation
+  plane d'un graphe planaire.
+  <i>Annals of Discrete Mathematics</i>, 17:293-302, 1983.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_Tremaux"></a>[6]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Rosenstiehl.
+  A characterization of planar graphs by Trémaux orders.
+  <i>Combinatorica</i>, 5(2):127-135, 1985.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_recti"></a>[7]
+</td>
+<td>
+P.&nbsp;Rosenstiehl and R.E. Tarjan.
+  Rectilinear planar layout and bipolar orientation of planar graphs.
+  <i>Discrete and Computational Geometry</i>, 1:343-353, 1986.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_v_pack"></a>[8]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix, J.&nbsp;Pach, and R.&nbsp;Pollack.
+  Small sets supporting Fary embeddings of planar graphs.
+  In <i>Twentieth Annual ACM Symposium on Theory of
+  Computing</i>, pages 426-433, 1988.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="schnyder"></a>[9]
+</td>
+<td>
+W.&nbsp;Schnyder.
+  Planar graphs and poset dimension.
+  <i>Order</i>, 5:323-343, 1989.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="schnyder2"></a>[10]
+</td>
+<td>
+W.&nbsp;Schnyder.
+  Embedding planar graphs in the grid.
+  In <i>First ACM-SIAM Symposium on Discrete Algorithms</i>, pages
+  138-147, 1990.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_v_pack2"></a>[11]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix, J.&nbsp;Pach, and R.&nbsp;Pollack.
+  How to draw a planar graph on a grid.
+  <i>Combinatorica</i>, 10:41-51, 1990.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_janos_t"></a>[12]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix, P.&nbsp;Ossona&nbsp;de Mendez, and J.&nbsp;Pach.
+  Representation of planar graphs by segments.
+  <i>Intuitive Geometry</i>, 63:109-117, 1991.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_netcut"></a>[13]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Kuntz.
+  Pagination of large scale networks.
+  <i>Algorithms review</i>, 2(3):105-112, 1992.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_triangle"></a>[14]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix, P.&nbsp;Ossona&nbsp;de Mendez, and P.&nbsp;Rosenstiehl.
+  On triangle contact graphs.
+  <i>Combinatorics, Probability and Computing</i>, 3:233-246,
+  1994.<br />
+<p>
+<blockquote><font size="-1">
+It is proved that any plane graph may be represented by a triangle contact
+system, that is a collection of triangular disks which are disjoint except at
+contact points, each contact point being a node of exactly one triangle.
+Representations using contacts of T- of Y-shaped objects follow. Moreover,
+there is a one-to-one mapping between all the triangular contact
+representations of a maximal plane graph and all its partitions into three
+Schnyder trees.
+</font></blockquote>
+<p>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_gd94"></a>[15]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Ossona&nbsp;de Mendez.
+  Regular Orientations, Arboricity and Augmentation.
+  In <i>DIMACS International Workshop, Graph
+  Drawing 94</i>, volume 894 of <i>Lecture notes in Computer Science</i>,
+  pages 111-118, 1995.<br />
+<p>
+<blockquote><font size="-1">
+Regular orientations, that is orientations such that almost all the vertices
+have the same indegree, relates many combinatorial and topological properties,
+such as arboricity, page number, and planarity. These orientations are a basic
+tool in solving combinatorial problems that preserve topological properties.
+Planar augmentations are a simple example of such problems.
+</font></blockquote>
+<p>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_left"></a>[16]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix, P.&nbsp;Ossona&nbsp;de Mendez, and J.&nbsp;Pach.
+  A Left-First Search Algorithm for Planar Graphs.
+  <i>Discrete Computational Geometry</i>, 13:459-468, 1995.<br />
+<p>
+<blockquote><font size="-1">
+We give an  <EM>O</EM>(|<EM>V</EM>(<EM>G</EM>)|)-time algorithm to assign vertical and horizontal
+segments to the vertices of any bipartite plane graph <EM>G</EM> so that (i) no two
+segments have an interior point in common, (ii) two segments touch each other
+if and only if the corresponding vertices are adjacent. As a corollary, we
+obtain a strengthening of the following theorem of Ringel and Petrovic. The
+edges of any maximal bipartite plane graph <EM>G</EM> with outer face <EM>bwb</EM>'<EM>w</EM>' can be
+colored by two colors such that the color classes form spanning trees of <EM>G</EM>-<EM>b</EM>
+and <EM>G</EM>-<EM>b</EM>', respectively. Furthermore, such a coloring can be found in linear
+time. Our method is based on a new linear-time algorithm for constructing
+bipolar orientations of 2-connected plane graphs.
+</font></blockquote>
+<p>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Sc99"></a>[17]
+</td>
+<td>
+Gilles Schaeffer.
+  Random sampling of large planar maps and convex polyhedra.
+  In <i>Annual ACM Symposium on Theory of Computing (Atlanta, GA,
+  1999)</i>, pages 760-769 (electronic). ACM, New York, 1999.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_SymmGD99"></a>[18]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix.
+  An heuristic for graph symmetry detection.
+  In J. Kratochvil, editor, <i>Graph Drawing</i>, volume 1731 of
+  <i>Lecture Notes in Computer Science</i>, pages 276-285. Springer,
+  1999.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_topoasp"></a>[19]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Ossona&nbsp;de Mendez.
+  On topological aspects of orientations.
+  <i>Discrete Mathematics</i>, 229(1-3):57-72, 2001.<br />
+<p>
+<blockquote><font size="-1">
+We are concerned with two classes of planar graphs: maximal planar graphs (i.e.
+polyhedral graphs, triangulations) and maximal bipartite planar graphs (i.e.
+bipartite planar graphs with quadrilateral faces). For these graphs we consider
+constrained orientations with a constant indegree for the internal vertex set.
+We recall or prove new fundamental relations between these orientations,
+specific tree decompositions and bipolar orientations. In particular, these
+relations yield linear time computation algorithms. Using these orientations,
+we give a characterization of 4-connected maximal planar graphs and
+3-connected planar graphs, which leads to simple line time algorithms.
+</font></blockquote>
+<p>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_Connectivity"></a>[20]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Ossona&nbsp;de Mendez.
+  Connectivity of planar graphs.
+  <i>Journal of Graph Algorithms and Applications</i>,
+  5(5):93-105, 2001.<br />
+[ <a href="http://www.cs.brown.edu/publications/jgaa/accepted/01/deFraysseixOssonadeMendez01.5.5.ps.gz">.ps.gz</a> | 
+<a href="http://www.cs.brown.edu/publications/jgaa/accepted/01/deFraysseixOssonadeMendez01.5.5.pdf">.pdf</a> ]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_cotreealg"></a>[21]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Ossona&nbsp;de Mendez.
+  An algorithm to find a Kuratowski subdivision in DFS cotree
+  critical graphs.
+  In Edy&nbsp;Try Baskoro, editor, <i>Proceedings of the Twelfth
+  Australasian Workshop on Combinatorial Algorithms (AWOCA 2000)</i>,
+  pages 98-105, Indonesia, 2001. Institut Teknologi Bandung.<br />
+<p>
+<blockquote><font size="-1">
+We present a simple linear time algorithm finding a Kuratowski subdivision in a
+DFS cotree critical graphs, based on recent theoretical results. For sake of
+clarity, we shall outline the proofs of the Theorem we make use of. This
+algorithm is the last part of the two step linear time Kuratowski finding
+algorithm implemented in PIGALE (``Public Implementation of a Graph Algorithm
+Library and Editor'', freely available at <A HREF="http://pigale.sourceforge.org">http://pigale.sourceforge.org</A>).
+</font></blockquote>
+<p>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="BLMc:2002"></a>[22]
+</td>
+<td>
+N.&nbsp;Bonichon, B.&nbsp;Le Saëc, and M.&nbsp;Mosbah.
+  Optimal area algorithm for planar polyline drawings.
+  In <i>28<sup>th</sup> International Workshop, Graph - Theoretic Concepts
+  in Computer Science (WG)</i>, volume 2573 of <i>LNCS</i>, pages 35-46.
+  Springer-Verlag, 2002.<br />
+[ <a href="./BLM_WG2002.ps.gz">.ps.gz</a> ]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_DFScotree"></a>[23]
+</td>
+<td>
+H.&nbsp;de Fraysseix and P.&nbsp;Ossona&nbsp;de Mendez.
+  A characterization of DFS cotree critical graphs.
+  In <i>Graph Drawing</i>, volume 2265 of <i>Lecture notes in
+  Computer Science</i>, pages 84-95, 2002.<br />
+<p>
+<blockquote><font size="-1">
+We give a characterization of DFS-cotree critical graphs which is
+central to the linear time Kuratowski finding algorithm implemented in
+PIGALE
+</font></blockquote>
+<p>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="Taxi_cotree2"></a>[24]
+</td>
+<td>
+H.&nbsp;de&nbsp;Fraysseix and P.&nbsp;Ossona&nbsp;de Mendez.
+  On cotree-critical and DFS cotree-critical graphs.
+  <i>Journal of Graph Algorithms and Applications</i>,
+  7(4):411-427, 2003.<br />
+[ <a href="http://www.cs.brown.edu/publications/jgaa/accepted/2003/deFraysseixOssonadeMendez2003.7.4.pdf">.pdf</a> ]
+<p>
+<blockquote><font size="-1">
+We give a characterization of DFS cotree-critical graphs which is central to
+the linear time Kuratowski finding algorithm implemented in PIGALE (Public
+Implementation of a Graph Algorithm Library and Editor) by the authors, and
+deduce an algorithm for finding a Kuratowski subdivision in a DFS
+cotree-critical graph.
+</font></blockquote>
+<p>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="BGH03c"></a>[25]
+</td>
+<td>
+N.&nbsp;Bonichon, C.&nbsp;Gavoille, and N.&nbsp;Hanusse.
+  Canonical decomposition of outerplanar maps and application to
+  enumeration, coding and generation.
+  In <i>29<sup>th</sup> International Workshop, Graph - Theoretic Concepts
+  in Computer Science (WG)</i>, volume 2880 of <i>Lecture Notes in Computer
+  Science</i>, pages 81-92. Springer-Verlag, June 2003.<br />
+[ <a href="http://dept-info.labri.fr/~gavoille/article/BGH03c.ps.gz">.ps.gz</a> ]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="BFM04"></a>[26]
+</td>
+<td>
+N.&nbsp;Bonichon, S.&nbsp;Felsner, and M.&nbsp;Mosbah.
+  Convex drawings of 3-connected planar graphs - (extended abstract).
+  In <i>Graph Drawing 2004</i>, 2004.
+  submitted.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="comp_algo03"></a>[27]
+</td>
+<td>
+J.M. Boyer, P.F. Cortese, M.&nbsp;Patrignani, and G.&nbsp;Di&nbsp;Battista.
+  Stop minding your P's and Q's: implementing fast and simple
+  DFS-based planarity and embedding algorithm.
+  In <i>Graph Drawing</i>, volume 2912 of <i>Lecture Notes in
+  Computer Science</i>, pages 25-36. Springer, 2004.<br />
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right">
+<a name="fps-ccs3pg-04"></a>[28]
+</td>
+<td>
+E.&nbsp;Fusy, D.&nbsp;Poulalhon, and G.Schaeffer.
+  Coding, counting and sampling 3-connected planar graphs.
+  In <i>16<sup>th</sup> ACM-SIAM Sympos. Discrete Algorithms</i>, 2005.
+  to appear.<br />
+
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>

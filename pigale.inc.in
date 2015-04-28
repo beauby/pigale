@@ -1,0 +1,29 @@
+SYSTEM=@SYSTEM@
+contains(SYSTEM,"ubuntu") {
+        QTINCLUDE=/usr/include/qt4
+        GLUTLIB=/usr/lib/libglut.a
+        QTLRELEASE=/usr/share/qt4/bin/lrelease
+        QTLUPDATE=/usr/share/qt4/bin/lupdate
+        } else {
+          contains(SYSTEM,"mac") {
+          QTLRELEASE= @QTDIR@/bin/lrelease
+          QTLUPDATE= @QTDIR@/bin/lupdate		  
+          } else {
+          QTLRELEASE= @QTDIR@/bin/lrelease
+          QTLUPDATE= @QTDIR@/bin/lupdate
+          GLUTLIB=@PPATH@/lib/libglut.a
+          }
+        MQTDIR = @QTDIR@
+        QTINCLUDE= @QTDIR@/include/Qt
+        }
+#debug_level 1-normal (used for profiler) 2-check arrays (slow)
+DEBUG_LEVEL = 2
+MODE = @DEBUG@
+####################### Nothing to edit after this line ##################
+#version of the library
+VERSION= @LIB_VERSION@
+DISTPATH = @PPATH@
+AWK = @AWK@
+#QMAKE_CXXFLAGS_RELEASE =  @CPU@
+
+

@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="Author" content="Hubert de Fraysseix">
+  <title>PIGALE Library</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+<table align="center">
+  <tbody>
+    <tr>
+      <td><img src="./icones/misspost.jpg" hspace="0" border="1"
+ align="left" alt="logo"></td>
+      <td align="center"> <font size="+3"><b>P.I.G.A.L.E.</b></font> <br>
+      <font size="+2"><br>
+      <b>P</b>ublic <b>I</b>mplementation of a <b>G</b>raph <b>A</b>lgorithm
+      <br>
+      <b>L</b>ibrary and <b>E</b>ditor </font> <br>
+      <br>
+      <font size="-1"> <a
+ href="http://www.ehess.fr/centres/cams/person/hf/"> H. de Fraysseix</a>&nbsp;
+&nbsp; &nbsp; <a href="http://www.ehess.fr/centres/cams/person/pom/">
+P. Ossona de Mendez</a> </font>
+      </td>
+	  <!-- for sourceforge-->
+	  <td>
+	  <A href="http://sourceforge.net"> 
+	  <IMG src="http://sourceforge.net/sflogo.php?group_id=50880&type=5" width="210" height="62" 
+	  border="0" alt="SourceForge Logo"></A>
+	</td>
+	  <!-- for sourceforge -->
+	</tr>
+      </tbody>
+    </table>
+    <hr>
+
+<h1> Client Server </h1>
+
+<p>
+The simple program <b>client</b> is an example how to communicate with the server.
+The client reads its instructions from stdin so that 
+it should not be difficult for applications to communicate with the server.
+</p>
+<p>
+The server and client use a TCP connection on port 4242.
+The server should be allowed to write on /tmp or \tmp on Windows (CREATE it, if necessary).
+</p>
+<p>
+To launch the client/server application, first launch the server:<br>
+<tt>pigale -server</tt> (serves one client at a time)<br>
+then the client:<br>
+<tt> client &lt data</tt><br> 
+or a pipe <br>
+<tt>cat data | client</tt>  (under Windows:  <tt>type data | client</tt>).<br>
+If the Client does not run on the same machine as the server:<br>
+<tt>client www.computer.com &lt data  </tt>
+</p>
+<p>
+An example file <b>Clientdata.txt</b>  and three graphs are provided.
+If you run <br>
+<tt>./client &lt Clientdata.txt </tt> <br>
+you should receive 8 png files and a graphml file containing the last graph created. 
+</p>
+<h2> Main Commands </h2>
+<p>
+The commands that can be used are most of the ones found in QT/Action.h,
+that is all the Pigale macros plus some specific ones:
+</p>
+
+<table class="opt1">
+<caption>Specific commands</caption>
+<tr><td >Command      	</td><td>Argument</td><td> </td></tr> 
+<tr><td class="opt">RS_GRAPH      	</td><td>graph filename</td><td> load a  graph  (on the server side)</td></tr> 
+<tr><td class="opt">RC_GRAPH      	</td><td>graph filename</td><td> load a  graph  (from the client side)</td></tr> 
+<tr><td class="opt">N_GRAPH	 </td><td></td><td> creates an empty graph</td></tr> 
+<tr><td class="opt">N_V	     	</td><td>number of vertices</td><td> create n vertices</td></tr> 
+<tr><td class="opt">N_E	     	</td><td>pair of vertices</td><td> create an edge  </td></tr> 
+<tr><td class="opt">PNG          	</td><td>size (1 int)</td><td> get a png image of the current drawing</td></tr> 
+<tr><td class="opt">PS          	</td><td></td><td> get a postscript file of the current drawing</td></tr> 
+<tr><td class="opt">RS_SAVE_GRAPH	</td><td>graph filename with extension</td><td> ask the server to save the current 
+            graph and send it to the client (the file format is determined by the extension)</td></tr> 
+</table>
+<br>
+<table class="opt1">
+<caption>Informations</caption>
+      <tr><td class="opt">N                                             </td><td> number of vertices</td></tr> 
+        <tr><td class="opt">M                                           </td><td> number of edges</td></tr> 
+        <tr><td class="opt">SIMPLE		</td><td> simple graph</td></tr> 
+        <tr><td class="opt">PLAN		</td><td> planar</td></tr> 
+        <tr><td class="opt">OPLAN		</td><td> outer planar</td></tr> 
+        <tr><td class="opt">SR			</td><td> serie-parallel</td></tr> 
+        <tr><td class="opt">MPLAN		</td><td> triangulated planar graph</td></tr> 
+        <tr><td class="opt">BI			</td><td> bipartite graph</td></tr> 
+        <tr><td class="opt">MBI			</td><td> max planar bipartite graph</td></tr> 
+        <tr><td class="opt">REG			</td><td> regular</td></tr> 
+        <tr><td class="opt">C1			</td><td> connected</td></tr> 
+        <tr><td class="opt">C2			</td><td> 2-Connected</td></tr> 	
+        <tr><td class="opt">C3			</td><td> 3-Connected</td></tr> 
+        <tr><td class="opt">MIN_D		</td><td> minimal degree</td></tr> 
+        <tr><td class="opt">MAX_D		</td><td> maximal degree</td></tr> 
+        <tr><td class="opt">COORD		</td><td> retrieve coords</td></tr> 
+        <tr><td class="opt">VLAB			</td><td> retrieve labels (long integers) </td></tr>  
+</table>
+<table class="opt1">
+<caption>Generators settings</caption>
+      <tr><td class="opt">GEN_N1                                             </td><td> number of vertices</td><td>an integer</td></tr> 
+      <tr><td class="opt"> GEN_N2                                           </td><td> number of vertices</td><td>an integer</td></tr> 
+      <tr><td class="opt">GEN_M  		</td><td> number of edges</td><td>an integer</td></tr> 
+</table>
+<br>
+All the other commands are the standart Pigale macros.
+<br><br>
+<table class="opt1">
+<caption>Generators</caption>
+<tr><td class="opt">GEN_GRID  </td>                                    <td>grid</td><td>GEN_N1, GEN_N2</td></tr>
+<tr><td class="opt">GEN_COMPLETE </td>                        <td>complete graph</td><td>GEN_N1</td></tr> 
+<tr><td class="opt">GEN_COMPLETE_BIP</td>                 <td>complete bipartite graph</td><td>GEN_N1, GEN_N2</td></tr>  
+<tr><td class="opt">GEN_RANDOM </td>                             <td>planar or not</td><td>GEN_N1 GEN_M</td></tr>     
+<tr><td class="opt">GEN_PLANAR</td>                               <td>planar</td><td>GEN_M</td></tr>     
+<tr><td class="opt">GEN_PLANAR_2C</td>                        <td>planar 2-connected</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_PLANAR_3C</td>                        <td>planar 3-connected</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_PLANAR_3R_2C</td>                  <td>planar 3-regular 2-connected</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_PLANAR_3R_3C</td>                  <td>planar 3-regular 3-connected</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_PLANAR_3R_D4C</td>               <td>planar 3-regular 3-connected without 4-separator</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_PLANAR_4R_C </td>                   <td>planar 4-regular connected</td><td>GEN_M</td></tr>   
+<tr><td class="opt">GEN_PLANAR_4R_2C </td>                  <td>planar 4-regular 2-connected</td><td>GEN_M</td></tr>   
+<tr><td class="opt">GEN_PLANAR_4R_3C </td>                  <td>planar 4-regular 3-connected</td><td>GEN_M</td></tr>   
+<tr><td class="opt">GEN_PLANAR_4R_BIP </td>                 <td>planar 4-regular bipartite</td><td>GEN_M</td></tr>   
+<tr><td class="opt">GEN_PLANAR_BIP</td>                        <td>planar bipartite</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_PLANAR_BIP_2C</td>                  <td>planar  2-connected bipartite</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_PLANAR_BIP_3C</td>                   <td>planar  3-connected bipartite</td><td>GEN_M</td></tr>    
+<tr><td class="opt">GEN_P_OUTER_N</td>                           <td>maximal outerplanar</td><td>GEN_N1</td></tr>    
+<tr><td class="opt">GEN_P_OUTER_NM</td>                        <td> outerplanar</td><td>GEN_N1, GEN_M</td></tr>    
+</table>
+<br>
+<table class="opt1">
+<caption>Duality and Angle graphs</caption>
+<tr><td class="opt">DUAL </td><td></td> </tr> 
+<tr><td class="opt">DUAL_G </td><td> without the exterior vertex</td> </tr> 
+<tr><td class="opt">ANGLE </td><td></td> </tr> 
+<tr><td class="opt">ANGLE_G </td><td>without the exterior face</td> </tr> 
+</table>
+<br>
+<table class="opt1">
+<caption>Augmentation algorithms</caption>
+<tr><td class="opt">CONNECT</td>                    <td> add edges</td> </tr>
+<tr><td class="opt">CONNECT_V</td>                <td>  add vertices</td> </tr>
+<tr><td class="opt">BICONNECT</td>                <td>biconnect a planar graph adding edges</td>  </tr>
+<tr><td class="opt">BICONNECT_NP</td>          <td>biconnect adding edges</td> </tr>
+<tr><td class="opt">BICONNECT_NP_V</td>      <td>biconnect adding vertices</td> </tr>
+<tr><td class="opt">TRIANGULATE_ZZ</td>          <td>triangulate adding edges</td> </tr>
+<tr><td class="opt">TRIANGULATE_V</td>         <td>triangulate adding vertices</td> </tr>
+<tr><td class="opt">TRIANGULATE_3C</td>         <td>triangulate a 3-connected planar graph adding edges</td> </tr>
+<tr><td class="opt">QUADRANGULATE_V</td>     <td>quadrangle a bipartite  graph, adding vertices</td> </tr>
+<tr><td class="opt">BISSECT_ALL_E</td>              <td>bisect all edges </td> </tr>
+</table>
+<br>
+<table class="opt">
+<caption>Remove operations</caption>
+<tr><td class="opt">REMOVE_ISOLATED_V  </td></tr>
+<tr><td class="opt">REMOVE_LOOPS </td></tr> 
+<tr><td class="opt">REMOVE_MULTIPLE_E </td></tr> 
+<tr><td class="opt">REMOVE_BRIDGES </td></tr>
+</table>
+<br>
+
+
+<table class="opt1">
+<caption>Drawings</caption>
+<tr><td class="opt">SCHNYDER_E</td><td>Schnyder algorithm: the graph is first made maximal by adding edges</td> </tr>
+<tr><td class="opt">SCHNYDER_V</td><td>Schnyder algorithm: the graph is first made maximal by adding vertices</td> </tr>
+<tr><td class="opt">FPP_FARY</td><td>Fraysseix, Pach, Pollack algorithm</td> </tr>
+<tr><td class="opt">POLYLINE</td><td>Bonichon's algorithm  (3-connected planar graph)</td> </tr>
+<tr><td class="opt">CCD</td><td>Convex drawing  (3-connected planar graph)</td> </tr>
+<tr><td class="opt">CD</td><td>Optimal convex drawing by Bonichon</td> </tr>
+<tr><td class="opt">TUTTE_CIRCLE </td><td>some edges are added before using Tutte's barycentric representation</td> </tr>
+<tr><td class="opt">TUTTE </td><td>Tutte's barycentric representation</td> </tr>
+<tr><td class="opt">SPRING_PM </td><td>spring embedder preserving the map</td> </tr>
+<tr><td class="opt">JACQUARD </td><td>spring embedder for planar graphs (Jacquard)</td> </tr>
+<tr><td class="opt">CURVES</td><td>spring embedder using curves</td> </tr>
+<tr><td class="opt">VISION </td><td>visibility algorithm for planar graphs</td> </tr>
+<tr><td class="opt">CONTATC_BIPARTI </td><td>representation of planar bipartite graphs by contact of segments</td> </tr>
+<tr><td class="opt">FPP_RECTI</td><td>kind of visibility representation based on FPP_FARY</td> </tr> 
+<tr><td class="opt">GVISION </td><td>visibility algorithm generalized to non-planar graphs</td> </tr>
+<tr><td class="opt">T_CONTACT </td><td>representation of a planar graph by contact of <b>T</b></td> </tr>
+<tr><td class="opt">TRIANGLE_CONTACT </td><td>representation of a planar graph by contact of <b>triangles</b></td> </tr>
+<tr><td class="opt">EMBED-3d </td><td>3<sup><small>d</small></sup>  representations</td> </tr>
+<tr><td class="opt">EMBED-3d_SCHNYDER </td><td>representation on S<sup><small>2</small></sup> of a planar graph</td> </tr>
+</table>
+<br>
+<table class="opt1">
+<caption>Algorithms</caption>
+<tr><td class="opt">KURATOWSKI </td><td>extract a Kuratowski subdivision of a non-planar graph</td></tr>   
+<tr><td class="opt">COTREE_CRITICAL</td><td>extract a cotree critical subgraph of  a non-planar graph</td></tr>   
+ <tr><td class="opt">COLOR_NON_CRITIC</td><td>color non-critical cotree edges of  a non-planar graph </td></tr>    
+<tr><td class="opt">NPSET</td><td></td></tr>    
+<tr><td class="opt">FIND_MAX_PLANAR</td><td>heuristic to find a maximal planar subgraph in a non-planar graph</td></tr>    
+<tr><td class="opt">NETCUT </td><td>partition a graph in a prescribe number of classes</td></tr>   
+<tr><td class="opt">SYMMETRY</td><td>heuristic to detect a symetrie in a graph</td></tr>    
+<tr><td class="opt">USE_GEOMETRIC_CIR</td><td></td></tr>    
+<tr><td class="opt">USE_LRALGO_CIR</td><td></td></tr>    
+<tr><td class="opt">COLOR_BIPARTI</td><td></td></tr>    
+<tr><td class="opt">COLOR_EXT_FACE</td><td></td></tr>    
+<tr><td class="opt">RESET_COLORS </td><td></td></tr>  
+</table>
+<br>
+<table class="opt">
+<caption>Orientation algorithms</caption>
+<tr><td class="opt">ORIENT_EDGES </td></tr>   
+<tr><td class="opt">ORIENT_INF</td></tr>    
+<tr><td class="opt">ORIENT_TRICON</td></tr>    
+<tr><td class="opt">ORIENT_BIPARTITE</td></tr>    
+<tr><td class="opt">ORIENT_SCHNYDER</td></tr>    
+<tr><td class="opt">ORIENT_BIPOLAR</td></tr>    
+<tr><td class="opt">ORIENT_BIPOLAR_NON_PLANAR</td></tr>  
+</table>
+<br>
+<table class="opt">
+<caption>User defined algorithms</caption>
+<tr><td class="opt">TEST_1</td></tr>    
+<tr><td class="opt">TEST_2 </td></tr>   
+<tr><td class="opt">TEST_3 </td></tr>   
+</table>
+
+<h2>A few words about the syntax</h2>
+<p>
+Command are separated by  <b>:</b> and  arguments by  <b>;</b>.<br>
+For example, the line<br>
+<tt>RC_GRAPH;ex.graphml</tt><br>
+ asks to transfer the  file ex.graphml  from the client and  read the graph.<br>
+</p>
+
+Lines starting with <b>#</b> or <b>;</b> have a special meaning:<br>
+- lines starting with '#' are comments<br>
+- lines starting with ':'  modifies the client-server behavior:
+<ul>
+<li>:D    debugging mode</li>
+<li>:!      signals the end of file and disconnects from the server</li>
+<li>:X      signals the end of file, disconnects from the server and close the client</li>
+</ul>
+
+<p>
+Whether under Linux or Windows, use <b>/</b> and not <b>\</b> inside path names.
+</p>
+In <b>debugging mode</b> all the commands (including comments)  are echoed by the client 
+and then by the server (prepended by a <b>!</b>) when the command has been fully processed.<br>
+<h2>An example</h2>
+<h3>Input</h3>
+<tt>
+# debug mode
+<br>:D
+<br># ask to transfer the  file sym.graphml  from the client
+<br>RC_GRAPH;../tgf/sym.graphml
+<br># ask the general visibility drawing
+<br>GVISION
+<br># asks to create and transfer to the client a png file
+<br>PNG
+<br>EMBED-3d:PNG
+<br>:!
+</tt>
+
+<h3>Output</h3>
+Below is a screen-shot of the client running the previous file.<br>
+
+<center>
+    <IMG SRC="./icones/client.png" HSPACE=60 VSPACE=50 BORDER=1   ALT="client">
+</center>
+
+   <hr><!-- hhmts start -->
+Last modified: Thu Aug  3 19:41:06 CEST 2006
+<!-- hhmts end -->
+</body>
+
+</html>

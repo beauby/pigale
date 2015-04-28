@@ -1,0 +1,66 @@
+:D
+#generate a  4-regular 3-connected graph
+GEN_M;30
+GEN_PLANAR_4R_3C
+POLYLINE
+PNG
+SCHNYDER_E
+PNG
+SPRING_PM
+PNG
+TUTTE_CIRCLE
+CURVES
+PNG
+TRIANGLE_CONTACT
+PNG
+T_CONTACT
+PNG
+RC_GRAPH;../tgf/sym.graphml
+EMBED-3d
+PNG
+#create a graph
+N_GRAPH
+#create 5 vertices
+N_V;6
+#add edges
+N_E;1;2
+N_E;1;3 
+N_E;1;4
+N_E;1;5
+N_E;2;3
+N_E;2;4
+N_E;2;5
+N_E;3;4
+N_E;3;5
+N_E;4;5
+N_E;5;6
+N_E;4;6
+N_E;3;6
+N_E;3;6
+GVISION
+PNG
+#generate a  4-regular 3-connected graph
+GEN_M;30
+GEN_PLANAR_4R_3C
+CCD
+PNG
+#generate a 3-connected bipartite graph
+GEN_PLANAR_BIP_3C
+CONTACT_BIPARTI
+PNG
+2_PAGES_BIPARTI
+PNG
+POLAR
+PNG
+FPP_RECTI
+PNG
+POLREC_BFS
+PNG
+# quit
+:!
+# close
+#:X 
+
+
+
+

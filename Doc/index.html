@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+  <HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <META NAME="Author" CONTENT="Hubert de Fraysseix">
+    <TITLE>PIGALE Library</TITLE>
+    <link type="text/css" rel="stylesheet"  href="style.css">
+  </HEAD>
+
+<BODY>
+
+<table ALIGN="center">
+<tr>
+<td><IMG SRC="./icones/misspost.png" HSPACE=0 BORDER=1  ALIGN=LEFT ALT="logo"></td>
+
+<td align= "center">
+	  <FONT SIZE="+3"><B>P.I.G.A.L.E.</B></FONT>
+	  <BR>
+	  <FONT SIZE="+2"><BR><B>P</B>ublic <B>I</B>mplementation of a <B>G</B>raph <B>A</B>lgorithm
+	    <BR>
+	    <B>L</B>ibrary and <B>E</B>ditor </FONT>
+	  <BR><BR>
+	    <FONT SIZE="-1">
+	      <A HREF="http://www.ehess.fr/centres/cams/person/hf/">
+	      H. de Fraysseix</A>&nbsp &nbsp &nbsp
+		<A HREF="http://www.ehess.fr/centres/cams/person/pom/">
+		P. Ossona de Mendez</A>
+	  </FONT>
+</td>
+<!-- for sourceforge 
+<td>
+<A href="http://sourceforge.net"> 
+<IMG src="http://sourceforge.net/sflogo.php?group_id=50880&type=5" width="210" height="62" border="0" alt="SourceForge Logo"></A>
+</td>
+for sourceforge -->
+
+</tr>
+</table>
+
+<hr>
+
+    <p>
+      We develop a    <b>graph editor</b> and a <b>C++ </b>algorithm 
+      library essentially concerned with planar graphs. 
+      The editor is particularly intended for graph theoretical research.  
+      <br>
+      Pigale is available under the <A HREF="license.html" ><B>GPL license</B></A>.
+      <br> 
+       The source files and a Windows executable 
+       (under the <A HREF="license_Qt.html"> <b>non-commercial Qt license</b></a>)
+       can be obtained either by ftp or cvs at
+	    <A HREF=" http://sourceforge.net/projects/pigale">SourceForge.</A> 
+      </p>
+
+
+    <UL>
+      <LI><A HREF="installation.html">Installation</A>
+      <LI><A HREF="http://pigale.sourceforge.net/doc/index.html" >On-line library documentation</A>
+      <LI><A HREF="images.html" >Screen shots</A>
+      <LI><A HREF="manual.html" >Short manual</A>
+      <LI><A HREF="client.html">Client/Server</A>
+      <li><a href="bibliography.html">Bibliography</a></li>
+    </UL>
+    <p>
+      It is built over a new graph data structure optimizing
+      topological operations on static graphs.<br> 
+      The <a href="http://graphml.graphdrawing.org/">graphml</a> input-output file format is partially implemented.<br>
+     We also provide a  <A HREF="client.html">Client/Server</A> which allows, among other things,
+       to easily interface Pigale with other programs (using a pipe).<br>
+      The library includes the following new algorithms based on recent  theoretical researches of our site. 
+    </p>
+    <ul type="disc">
+      <li>General Algorithms:
+	<ul type="circle">
+	  <li>a planarity test and an embedding computation algorithm using
+	    Fraysseix-Rosenstiehl left-right algorithm [3,5,6]  <br>(probably the fastest planarity test [27]), </li>
+	  <li>a linear time algorithm to locate a Kuratowski subdivision or
+	    a cotree critical partial subgraph in a non planar graph [4,21,24], </li>
+	  <li>a linear time 3-connexity test for planar graphs [19,20], </li>
+	  <li>a linear time recognition algorithm for subdivisions of 3-connected planar graphs ([19]), </li>
+	  <li>a linear time 4-connexity test for maximal planar graphs [19], </li>
+	  <li>a fast Depth-First Search algorithm (unpublished), </li>
+	  <li>fast bipolar and regular orientation algorithms for planar graphs [16], </li>
+	  <li>a linear time optimal triangulation algorithm for 3-connected planar 
+	    graphs increasing the degrees by at most 6 [15], </li>
+	  <li>a partitioner algorithm based on factorial analysis [13]. </li>
+	</ul>
+      </li>
+      <li>Drawing Algorithms:
+	<ul type="circle">
+	  <li>optimized Fary drawing algorithms [8-11] relying on new planar augmentation algorithms [15], i.e.:
+	    <ul type="square">
+	      <li>Fraysseix, Pach Pollack  algorithm, </li>
+	      <li>Schnyder algorithm using our triangulation algorithms, </li>
+	      <li>Schnyder algorithm using a vertex triangulation, </li>
+	      <li>Tutte barycentric representation of 3-connected graphs, </li>
+	      <li>A Fary representation derived from the Tutte algorithm,</li>
+	      <li>A spring embedder which preserves the map,&nbsp; (unpublished).</li>
+	    </ul>
+	  </li>
+	  <li> visibility representation of planar graphs [7],</li>
+	  <li>a drawing of planar graphs using B&eacute;ziers curves 
+	    (based on a spring embedder, unpublished),<br> </li>
+	  <li>an algorithm to represent 2-connected planar bipartite graphs
+	    as the incidence graph of horizontal and vertical segments [12,16],</li>
+	  <li> an algorithm to represent planar graphs by contacts of <b>T</b> [14],</li>
+	  <li>An algorithm to represent a graph in R<sup><small>3</small></sup>,
+	    as projections of different embeddings of the graph in R<sup><small>n-1</small></sup> [13].
+	  </li>
+	</ul>
+      </li>
+      <li>Experimental Algorithms:
+	<ul type="circle">
+	  <li>an heuristic to detect symmetries [18], </li>
+	  <li>an heuristic to find a maximal planar partial graph of a non planar graph (unpublished). </li>
+	</ul>
+      </li>
+    </ul>
+    We are also adding some algorithms developed in other research centers:<br>
+    <ul>
+      <li>Gilles Schaeffer:
+    <ul>
+      <li>random planar maps generators [17],</li>
+    </ul></li>
+    <li>Nicolas Bonichon:
+    <ul>
+      <li>random outer planar maps generators [25],</li>
+      <li>drawing of planar graphs on the grid using polylines [22],</li>
+      <li>convex drawing of 3-connected planar graphs on the grid [26].</li>
+    </ul></li>
+  </ul>
+    <p> The editor is based on the <b>Qt library</b> and uses the <b>OpenGLlibrary</b> for graph representations 
+      in R<sup><small>3</small></sup>.<br>
+      Some main features of this editor are: </p>
+    <ul type="circle">
+      <li> constrained drawing on a grid, </li>
+      <li> unbound number of undoes, </li>
+      <li> macro capabilities, </li>
+      <li> reconfigurability. </li>
+    </ul>
+    <br>
+    <hr>
+    <table>
+      <tr><td><IMG SRC="./icones/mail.gif" ALT="mail logo"></td>
+	<td><address><a href="mailto:hbonnin@users.sourceforge.net">
+         Hubert de Fraysseix</a></address></td>
+	<td><address><a href="mailto:pom@users.sourceforge.net">
+         Patrice Ossona de Mendez</a></address></td>
+      </tr></table>
+<!-- hhmts start -->
+Last modified: Wed Apr 20 19:16:23 CEST 2005
+<!-- hhmts end -->
+  </BODY>
+</HTML>

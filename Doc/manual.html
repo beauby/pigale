@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+  <HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <META NAME="Author" CONTENT="Hubert de Fraysseix">
+    <TITLE>PIGALE User Manual</TITLE>
+    <link type="text/css" rel="stylesheet"  href="style.css">
+  </HEAD>
+
+<body bgcolor="#D0F0D0">
+
+<A NAME="home"> </A>
+
+<table class="c2"  ALIGN="center">
+<tr>
+<td> <IMG SRC="./icones/misspost.png" height= "100" alt="pigale"></td>
+<td class="c2"><b>Using Pigale</b></td>
+<!-- sourceforge
+<td><A href="http://sourceforge.net"> 
+<IMG src="http://sourceforge.net/sflogo.php?group_id=50880&type=5" width="210" height="62" border="0" alt="SourceForge Logo"></A>
+</td>
+sourceforge  -->
+</tr>
+</table>
+
+<hr>
+
+<ul>
+<li> <A HREF="manual.html#OV">Overview</A></li>
+<li> <A HREF="manual.html#set">Settings</A></li>
+<li> <A HREF="manual.html#GE">Using the Editor</A></li>
+<li> <A HREF="manual.html#zoom">Zoom</A></li>
+<li> <A HREF="manual.html#macro">Using Macros</A></li>
+<li> <A HREF="manual.html#tgf">Input files:TGF, GRAPHML and ASCII formats</A></li>
+<li> <A HREF="manual.html#gen">Generating graphs</A></li>
+<li> <A HREF="manual.html#3d">Embedding a graph  in space</A></li>
+</ul>
+
+<hr>
+
+<H2> <A NAME="OV">O</A>verview </H2>
+<h3>Starting Pigale</h3>
+<b>Pigale</b> first reads the <A HREF="manual.html#set">settings</A>
+ that have been saved or the default ones
+<br>
+The input and output files can be overridden by the arguments passed to
+ <b>Pigale</b>.
+<br>
+The valid flags are:
+
+<table >
+<tr>
+<td><b> -i </b></td><td> <tt> input-filename </tt></td><td></td><td></td><td></td><td></td>
+</tr><tr>
+<td><b> -o </b> </td><td><tt> output-filename </tt></td>
+</tr><tr>
+ <td><b> -m </b></td><td> <tt> macro-filename </tt></td>
+</tr><tr>
+<td><b> -s </b></td><td> to start Pigale as a server.
+</table>
+
+The filenames must include the paths, which will determined the directories where the files are loaded and saved.
+<br>
+
+The first time you execute <b>Pigale</b>, you amay be asked to give a location of input files and the location of this manual.
+<br>
+
+Graphs are either coded as <A HREF="manual.html#tgf"><b>tgf</b></A> files or
+<A HREF="manual.html#tgf"><b>ASCII</b></A> files.
+<br>
+<br>
+
+The arrows of the tool bar let you load the next
+ or previous graph of the current tgf file or reload the current one.<br>
+
+<table>
+<tr>
+<td><IMG SRC="icones/sleft.png" alt="left"></td>
+<td><IMG SRC="icones/reload.png" alt="reload"></td>
+<td><IMG SRC="icones/sright.png" alt="right"></td>
+</tr>
+</table>
+On the lowest band of the main window is displayed the current tgf input and output file.<br>
+
+In Pigale there always one active graph which is displayed in the <b>Graph editor</b> window.
+That graph can be saved, modified or displayed by different
+algorithms. A copy is created for any display not in the <b>Graph editor</b> window.
+
+<h3>Windows</h3>
+Under the menus, there is a tool bar that you can move around or hide.<br>
+Notice that some menus are not available if the current graph does not
+fulfill the right properties for a given algorithm.<br>
+
+If you see a small manual " <IMG SRC="icones/xman.png" alt = "xman"> " at the left of a menu item,
+ you can get a small help using the WhatisThis button <IMG SRC="icones/help.png"  alt="xman"><br>
+The windows next, to the <b>Graph editor</b> window, are used to show
+different views of a graph and these few notes.<br>
+They can be printed (except the one for 3d embeddings) or exported as png images.<br>
+The top right window is for messages (properties of the graph, warnings, etc.).
+Just under are displayed the main properties of the graph, all of them are maintained
+in real time.
+
+<h3><A NAME="set">P</A>igale settings</h3>
+Among other things, the <b>Settings</b> menu allows you to:
+<ul>
+<li> be in <b>debug</b> mode to increase the verbosity of Pigale and print more messages in <tt>log.txt</tt></li>
+<li> enable or disable the <A HREF="#undo"><b>undo</b></A> feature</li>
+<li> define the <b>Pigale colors</b> used by Pigale.</li>
+<li> define the <b>limits</b> of Pigale: i.e. define the maximum number of vertices above which graph are not displayed and slow algorithms are not performed.</li>
+<li>define what the <b>vertex show</b> i.e. their labels or their index (or whatever the user programmed).</li>
+<li> define some <b>embed options</b>, now for geometric drawings.</li>
+<li> define the <b>distance</b> used to embed the graph in <b>R<sup>n-1</sup></b></li>
+<li> save the settings if the version of <b>Qt</b> is at least 3.0:
+<ul>
+<li> all the settings of this menu,</li>
+<li> the generator settings,</li>
+<li> the macro playback settings,</li>
+<li> the macro pause delay setting,</li>
+<li> the input and output tgf files,</li>
+<li> the  documentation directory,</li>
+<li> the png directory,</li>
+<li> the geometry and colors of the screen,</li>
+<li> the printer settings.</li>
+</ul></li>
+</ul>
+Under Linux, the settings are saved in ~/.qt/Pigalerc.
+The dashed line at the top of the settings menu, is used to create a floating settings menu.
+
+<br><A HREF="manual.html#home"><em>top</em></A>
+
+
+
+<HR><H2> <A NAME="GE">U</A>sing the editor </H2>
+<h3>Mouse Actions </h3>
+By default, the <b>left button</b> of the mouse is use to move vertices.<br>
+Other actions can be selected, by clicking on the radio buttons (Left Button).<br>
+<ul>
+<li><b>Col/Thick:</b> Color  (edges and vertices) or thickness (edges)</li>
+<li><b>Add/Del:</b> Add or delete  (edges and vertices)</li>
+<li><b>Orient:</b> Orient  (edges)</li>
+<li><b>Move:</b> Move  (vertices)</li>
+<li><b>Bis./Con.:</b> Bisect or contract  (edges)</li>
+<li><b>Ext.Face/extbrin:</b> Define the exterior faceor the extbrin</li>
+<li><b>Label/Reset all:</b> Redefine the label of a vertex/Reset all labels as the indices</li>
+</ul>
+If the <b>shift</b> is pressed, the actions are toggled the following way:
+<ul>
+<li> Add <b>/</b> Del </li>
+<li> Orient <b>/</b> Suppress the orientation </li>
+<li> Move a vertex <b>/</b> Move all vertices of a given color </li>
+<li> Bisection <b>/</b> Contraction </li>
+<li> Exterior face <b>/</b> extbrin </li>
+</ul>
+Other actions:
+<ul>
+<li> <b>Add  + control left button </b> Duplicate the colored subgraph </li>
+<li> <b>Add  + shift control left button </b> Duplicate the colored subgraph
+				    and add edges between corresponding vertices</li>
+<!-- <li> The <b>move control first button</b> zoom in.</li>
+<li> The <b>move shift control first button</b> zoom out.</li> -->
+<li> The <b>middle button</b> is set to move vertices.</li>
+<li> The <b>right button</b> is set to display some information.</li>
+</ul>
+<h3> Colors and Thickness</h3>
+The 16 upper small colored squares at the right of the editing window,
+defines the brush color which appears with a bigger square. <br>
+The brush color defines the color of the vertices
+when they are created, re colored or define the ones to be deleted.<br>
+The 16 lower squares have the same functionality for edges.<br>
+The last 3 squares are used to define the thickness of the edges.
+
+
+<h3> Drawing on a grid</h3>
+The grid size is defined by the slider position.<br>
+When a graph is loaded, Pigale computes the minimum size grid on which the graph can be drawn, without
+moving the vertices.
+When you click on <b> Force G</b>, Pigale will force all the vertices to fall on grid points,
+checking overlapping of vertices and checking that the map is unchanged.
+
+The <b>undo G</b> button, let you come back to the previous state.
+When you click on <b>Fit grid</b>, you are forced to
+move or create vertices on grid points.
+
+<h3> <A NAME="undo"> Undo/Redo</A></h3>
+If this function is enable, a copy of the current graph is appended each time a program
+adds or delete edges or one manually delete vertices.<br>
+One can always <b>Redo</b> an <b>undo</b>.<br>
+When a new graph is loaded, all the copies are destroyed and the current graph is saved.<br>
+The save icon let you manually append a copy.
+
+<table>
+<tr>
+<td><IMG SRC="icones/sleftarrow.png" alt="leftarrow"></td>
+<td><IMG SRC="icones/sfilesave.png" alt="save"></td>
+<td><IMG SRC="icones/srightarrow.png"alt="rightarrow"></td>
+</tr><tr>
+<td><b>Undo</b></td> <td><b>Save</b></td> <td><b>Redo</b></td>
+</tr>
+</table>
+
+There is no limit of the number of copies which are placed in a temporary file,
+ which name is written in log.txt
+<br><A HREF="manual.html#home"><em>top</em></A>
+
+<HR><H2> <A NAME="zoom">Z</A>oom </H2>
+Normally one should use the mouse <b>Wheel</b>.<br> 
+In the drawing window, the zoom operates around the last clicked position.
+If you have no mouse wheel, you can use the keyboard <b>up</b> and <b>down</b> arrows to zoom and <b>home</b> to reset the zoom provided you have clicked on the drawing.
+
+<br><A HREF="manual.html#home"><em>top</em></A>
+
+
+
+<HR><H2> <A NAME="macro">M</A>acro </H2>
+
+You can record any number of functions from the menus Augment, Remove, Dual/Angle, Algo, Orient, Generate and
+UserMenu.<br>
+These macros can be saved as text files.<br>
+<!-- The functions   use the colors and thickness defined at the recording time.<br> -->
+When you execute a macro, the recording is stopped but you can restart it.
+
+<table>
+<tr>
+<td><IMG SRC="icones/macroplay.png" alt="macroplay"></td>
+</tr><tr>
+<td><b>Play macro</b></td>  
+</tr>
+</table>
+If the first record is not a graph generator, the macro will start loading the next graph
+of the current file.<br>
+If the repeat macro value is 0, the macro will be repeated until you quit that function by typing
+<b>ESC</b>, or if an error occurs..
+<br><A HREF="manual.html#home"><em>top</em></A>
+
+<HR><H2> <A NAME="3d">E</A>mbedding a graph  in space </H2> 
+The user have the choice among the following distances:
+<ul>
+<li> Czekanovski-Dice has been shown effective for graph partitioning,</li>
+<li> Bisect is such that the isometries of the graph are in a one to one correspondence with its
+automorphisms,</li>
+<li> Adjacence is not an Euclidean distance,</li>
+<li> Adjacence M is a modification of the previous one and is Euclidean,</li>
+<li> Laplacian is defined by the laplacian of the complemented graph and is Euclidean,</li>
+<li> Oriented is a generalization to directed graphs of the Czekanovski-Dice distance,</li>
+<li> R2 is the one used by the drawing in the editor an is used for experiments.</li>
+
+</ul>
+The axes <b>X</b>,<b>Y</b>,<b>Z</b> are respectively colored <b>Red</b>,<b>Green</b>,<b>Blue</b>
+<H3><b>Mouse Action</b></H3>
+<ul>
+<li><b>Left button:</b>
+ <ul>
+  <li>Moving along X axis -&gt; Rotate along Y</li>
+  <li>Moving along Y axis -&gt; Rotate along X</li>
+  <li>Double Click -&gt; Start/Stop Rotate (depends on vertical slider)</li>
+ </ul></li>
+<li><b>Right button:</b> 
+ <ul>
+  <li>Moving along X axis -&gt; Rotate along Y</li>
+  <li>Moving along Y axis -&gt; Rotate along Z</li>
+ </ul></li>
+ <li><b>Middle Button:</b>
+ <ul>
+  <li>Moving along X axis -&gt; Translate along X</li>
+  <li>Moving along Y axis -&gt; Translate along Y</li>
+ </ul></li>
+ <li><b>Middle+Shift Button:</b> Translate along X and Z
+ <ul>
+  <li>Moving along X axis -&gt; Translate along X</li>
+  <li>Moving along Y axis -&gt; Translate along Z</li>
+ </ul></li>
+<li><b>Wheel:</b> Zoom</li>
+</ul>
+<H3>Buttons</H3>
+The rightmost spin boxes let you select the projection to display.
+The <b>facet</b> button triangulate the graph, if it is planar, and draw the facets.<br>
+
+<br><A HREF="manual.html#home"><em>top</em></A>
+
+
+<HR><H2> <A NAME="gen">G</A>enerating graphs </H2> 
+The planar graph generators are based on the algorithms of Gilles Schaeffer.
+They produce random planar graphs with prescribed properties.<br>
+The size input of these algorithms is either the number of edges or the number of vertices.<br> 
+The program automatically
+ modified this value if unacceptable (e.g.  a cubic graph has a number
+of edges  divisible by three).<br>
+Depending on the prescribed properties, the algorithms, consume more or less memory and time.
+To get reasonable performance, we allow the algorithms to generate graphs with slightly different size
+than the prescribed one.<br>
+Loops are always erased (1-connected graphs get less edges than asked).<br>
+If the option <b> Erase multiple edges</b> is on, we erase multiple edges
+after the generation process, therefore we do not maintain the degree property.
+<br><A HREF="manual.html#home"><em>top</em></A>
+
+<HR><H2> <A NAME="tgf">T</A>gf, GRAPHML and ASCII files </H2> 
+We use a general proprietary format <b>TGF</b>.<br> 
+A TGF file contains records, here corresponding to graphs.
+Each record consisting of a variable number of fields.<br>
+One of its main advantage is that we can write and read any complex data structure.
+But it is dependent of the processor type (Low or High indian etc).<br><br>
+We partially implemented  the <b>GRAPHML</b> file format (cf. http://graphml.graphdrawing.org/),
+which is now the only way in <b>Pigale</b>to add text labels to the vertices<br><br>
+We use a very simple <b>ASCII</b> file structure to store graphs. <br>
+For example, the following file defines a graph called <tt>Triangle</tt> 
+with three vertices labeled <tt>10,20,30</tt>
+and three edges. The first 0 at the last line indicates the end of the list of edges,
+the second one indicates the end of the graph data.
+<tt><br><br>
+PIG:0<br>
+Triangle<br>
+10 20<br>
+20 30<br>
+30 10<br>
+0 0
+</tt>
+						    
+<br><A HREF="manual.html#home"><em>top</em></A>
+
+</body>
+</html> 

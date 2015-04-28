@@ -1,0 +1,16 @@
+pigale-1.3.11:
+- corrected a bug while taking snapshots of the editor
+- added a representation of a bipartite graph on 2 pages
+- improved representation of bipartite graphs by contact of segments so that all segments touch or cross the diagonal
+- pigale is relinked when libraries change
+- added to configure the option --enable-ubuntuto use the preinstalled Qt4 package
+- corrected a bug in RemoveIsthmus()
+pigale-1.3.10:
+- corrected a bug in the server when transfering a graph
+- when saving a graph as a text file, an extra line after the title was added
+- the random graph generator improved
+- when using Qt-4.5.0 the canvas was not properly updated
+- by default sample buffers are used if the graphic card is compatible
+	
+
+	

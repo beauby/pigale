@@ -1,0 +1,82 @@
+
+body    {background-color: #D0F0D0;
+	color: #000000;
+	}
+ :link  {color: #00A0FF; 
+	background-color: #D0F0D0;
+	}
+ :visited {color: #F000F0; 
+	background-color: #D0F0D0;	
+	}
+ :active {color: #FF0000; 
+	background-color: #D0F0D0;
+	}
+H1      {color: #33663C;
+	background-color: #D0F0D0;
+	}
+
+table,td,tr{color: #000000;
+	background-color: #D0F0D0;
+	padding: 1em
+	}
+td.c1   {color: #00520E;
+	background-color: #92AC96;
+	font-family: Helvetica, serif;
+	font-size: 172%;
+	}
+h1.c1   {color: #33663C;
+	background-color: #d0f0d0;
+	font-family: Helvetica, serif;
+	font-size: 180%;
+	}
+h2.c1  {color: #33663C;
+	background-color: #d0f0d0;
+	font-family: Helvetica, serif;
+	font-size: 144%;
+	}
+h3.c1  {color: #33663C;
+	background-color: #d0f0d0;
+	font-family: Helvetica, serif;
+	font-size: 120%;
+	}
+table.c2{color: #000000;
+	background-color: #d0f0d0;
+	width: 90%;
+	padding: 2px;
+	}
+td.c2   {color: #000000;
+	background-color: #d0f0d0;
+	font-family: Helvetica, serif;
+	font-size: 180%;
+	font-weight: bolder;
+	}
+h2.c2  {color: #000000;
+	background-color: #d0f0d0;
+	font-family: Helvetica, serif;
+	font-size: 144%;
+	}	
+table.opt{color: #0000ff;
+	background-color: #60a060;
+	border-color : #40b040;
+	border-width: 2px;
+	border-style : solid;
+	width: 50%;
+	padding: 0px;
+	}
+td.opt  {color: #AA0000;
+	background-color: #d0f0d0;
+	font-family: Helvetica, serif;
+	font-size: 100%;
+	font-weight: bolder;
+	text-align : center;
+	}		
+table.opt1{color : #0000ff;
+	background-color: #60a060;
+	border-color : #40b040;
+	border-width: 2px;
+	border-style : solid;
+	width: 90%;
+	padding: 0px;
+	}			
+	
+
